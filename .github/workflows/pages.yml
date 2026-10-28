@@ -25,6 +25,8 @@ jobs:
           node-version: '24'
       - name: Build static site
         run: npm run build
+      - name: Validate editable content
+        run: node scripts/test-content.mjs
       - name: Validate site
         run: npm run check
       - name: Upload static files

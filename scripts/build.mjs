@@ -1,14 +1,18 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {loadContent,renderContent} from './content.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=path.join(root,'site'),output=path.join(root,'docs');
+const content=await loadContent(source);
+const defaults=JSON.parse(await fs.readFile(path.join(source,'content/defaults.json'),'utf8'));
 const base=(process.env.BASE_PATH||'/port').replace(/\/$/,'');
 const rootFiles=(await fs.readdir(source)).filter(f=>/\.(?:css|js|json|ico|png)$/.test(f));
 const files=[];
 async function walk(dir,rel=''){for(const entry of await fs.readdir(dir,{withFileTypes:true})){const name=path.posix.join(rel,entry.name);if(entry.isDirectory())await walk(path.join(dir,entry.name),name);else files.push(name)}}
 await walk(source);await fs.mkdir(output,{recursive:true});
 function transform(text,rel){
+  text=renderContent(text,rel,content,defaults);
   if(rel.endsWith('.js')){
     text=text.replaceAll('unoptimized:!1','unoptimized:!0');
     text=text.replace('t.GoogleAnalytics=function(e){','t.GoogleAnalytics=function(e){return null;');
@@ -22,7 +26,7 @@ function transform(text,rel){
     text=text.replaceAll('pushState(null,"","/contact")','pushState(null,"","'+base+'/contact")');
   }
   text=text.replace(/\/_next\/image\?url=([^&"'<>\s]+)(?:(?:&amp;|&)(?:w|q)=\d+)*/g,(_,encoded)=>decodeURIComponent(encoded));
-  text=text.replace(/(?<![A-Za-z0-9_])\/assets\//g,base+'/assets/').replace(/(?<![A-Za-z0-9_])\/_next\//g,base+'/_next/');
+  if(!rel.startsWith('content/')&&!rel.startsWith('admin/')&&!rel.endsWith('.mjs')) text=text.replace(/(?<![A-Za-z0-9_])\/assets\//g,base+'/assets/').replace(/(?<![A-Za-z0-9_])\/_next\//g,base+'/_next/');
   for(const file of [...rootFiles,'site.webmanifest'])text=text.replaceAll('/'+file,base+'/'+file);
   text=text.replaceAll('++hellohello — Design & Technology Agency','Lu Kehao — Portfolio').replaceAll('++hellohello — Design &amp; Technology Agency','Lu Kehao — Portfolio');
   text=text.replace(/\+\+hellohello[^\"\n<>]{0,30}Technology Agency/g,'Lu Kehao — Portfolio');
