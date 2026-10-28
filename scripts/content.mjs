@@ -6,6 +6,7 @@ const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&g
 export function arrayAt(text,startMarker,endMarker,startAt=0){const start=text.indexOf(startMarker,startAt);if(start<0)throw Error('作品模板起点不存在');const from=start+startMarker.length,end=text.indexOf(endMarker,from);if(end<0)throw Error('作品模板终点不存在');return {from,end,data:JSON.parse(text.slice(from,end))};}
 export async function loadContent(source){return validateContent(JSON.parse(await fs.readFile(path.join(source,'content/projects.json'),'utf8')));}
 export function renderContent(text,rel,content,defaults){
+  if(rel==='index.html')text=text.replaceAll('\r\n','\n');
   if(rel!==chunk&&rel!=='index.html')return text;
   const projects=content.projects;
   if(rel===chunk){

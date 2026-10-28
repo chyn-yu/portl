@@ -8,7 +8,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=path.join(root,'site'),output=path.join(root,'docs');
 const content=await loadContent(source);
 const defaults=JSON.parse(await fs.readFile(path.join(source,'content/defaults.json'),'utf8'));
-const base=(process.env.BASE_PATH||'/port').replace(/\/$/,'');
+const base=(process.env.BASE_PATH||'/portl').replace(/\/$/,'');
 const rootFiles=(await fs.readdir(source)).filter(f=>/\.(?:css|js|json|ico|png)$/.test(f));
 const files=[];
 async function walk(dir,rel=''){for(const entry of await fs.readdir(dir,{withFileTypes:true})){const name=path.posix.join(rel,entry.name);if(entry.isDirectory())await walk(path.join(dir,entry.name),name);else files.push(name)}}
@@ -42,7 +42,7 @@ function transform(text,rel){
   if(rel==='index.html'){
     text=text.replace(/\s+(?:srcset|sizes)="[^"]*"/gi,'');
     text=text.replace(/<link\b[^>]*href="https:\/\/www\.googletagmanager\.com[^>]*>/gi,'');
-    text=text.replace(/<link rel="canonical"[^>]*>/,'<link rel="canonical" href="https://lindaprice-wq.github.io/port/">');
+    text=text.replace(/<link rel="canonical"[^>]*>/,'<link rel="canonical" href="https://chyn-yu.github.io/portl/">');
     text=text.replace('</head>','<script src="'+base+'/deployment.js"></script></head>');
   }
   return text;

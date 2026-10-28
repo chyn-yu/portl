@@ -1,6 +1,6 @@
 # 作品管理后台
 
-地址：https://lindaprice-wq.github.io/port/admin/
+地址：https://chyn-yu.github.io/portl/admin/
 
 后台顶部可以切换“作品展示”“自我介绍 / 履历”“目录页”和“荣誉页”。使用同一个 GitHub 连接统一保存发布。
 
@@ -16,7 +16,7 @@
 
 打开后台，展开“首次使用”。通过链接创建 Fine-grained personal access token：
 
-1. Repository access 选择 Only select repositories，选中 `port`。
+1. Repository access 选择 Only select repositories，选中 `portl`。
 2. Repository permissions → Contents 设置 Read and write，其余默认。
 3. 令牌只粘贴到后台的密码框，不要发送给其他人或提交到仓库。
 

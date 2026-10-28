@@ -4,7 +4,7 @@ Designer portfolio with an animated intro, About, project catalog, four featured
 
 ## Live website
 
-https://lindaprice-wq.github.io/port/
+https://chyn-yu.github.io/portl/
 
 ## Local preview
 
@@ -16,11 +16,11 @@ npm run check
 npm run dev
 ```
 
-Open http://127.0.0.1:4175/port/.
+Open http://127.0.0.1:4175/portl/.
 
 ## Editing
 
-`site/` contains the editable HTML, styles, interaction scripts, browser bundles and assets. `scripts/build.mjs` exports the GitHub Pages version into `docs/`, adjusts the `/port/` base path and uses direct static images. Generated files are included so branch-based Pages can also publish `/docs`.
+`site/` contains the editable HTML, styles, interaction scripts, browser bundles and assets. `scripts/build.mjs` exports the GitHub Pages version into `docs/`, adjusts the `/portl/` base path and uses direct static images. Generated files are included so branch-based Pages can also publish `/docs`.
 
 The GitHub Actions workflow builds, checks and deploys every push to `main`. For the first deployment, choose **Settings → Pages → Source → GitHub Actions** in this repository, then run the workflow if needed.
 

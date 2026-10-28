@@ -12,7 +12,7 @@
     const defs=document.createElementNS(ns,'defs');const clip=document.createElementNS(ns,'clipPath');clip.id='resume-text-reveal';clip.setAttribute('clipPathUnits','userSpaceOnUse');
     for(const box of slices.boxes){const rect=document.createElementNS(ns,'rect');rect.setAttribute('x',box.x);rect.setAttribute('y',box.y);rect.setAttribute('width',box.w);rect.setAttribute('height',box.h);rect.dataset.top=box.y;rect.dataset.height=box.h;clip.append(rect);characters.push(rect)}
     defs.append(clip);plane.append(defs);
-    const artwork=document.createElementNS(ns,'image');artwork.setAttribute('href','/port/assets/images/about-resume-reference.png');artwork.setAttribute('width','767');artwork.setAttribute('height','756');artwork.setAttribute('clip-path','url(#resume-text-reveal)');plane.append(artwork);
+    const artwork=document.createElementNS(ns,'image');artwork.setAttribute('href','/portl/assets/images/about-resume-reference.png');artwork.setAttribute('width','767');artwork.setAttribute('height','756');artwork.setAttribute('clip-path','url(#resume-text-reveal)');plane.append(artwork);
     resume.append(plane);about.append(resume);update();
   }
   function update() {

@@ -6,8 +6,8 @@ main > #awards { order: 2; flex-shrink: 0; }
 main > #work, main > .pin-spacer:has(#work) { order: 3; display: block !important; flex-shrink: 0; }
 #work { display: block !important; }
 #work img, #work video { filter: invert(1) !important; }
-#work div:has(> img[src*="/port/assets/images/work/"]) { filter: invert(1); }
-#work div:has(> img[src*="/port/assets/images/work/"]) > img { filter: none !important; }
+#work div:has(> img[src*="/portl/assets/images/work/"]) { filter: invert(1); }
+#work div:has(> img[src*="/portl/assets/images/work/"]) > img { filter: none !important; }
 /* Cover images also have div wrappers; keep compensation at the wrapper level. */
 .work-view-cursor { filter: invert(1); }
 html[data-preview-section="work"] main > nav span[data-preview-label="About"] { color: #777 !important; }

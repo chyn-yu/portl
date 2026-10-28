@@ -1,6 +1,6 @@
 import {validateContent} from '../content-schema.mjs';
 import {createPagesEditor,writePath} from './pages-editor.mjs';
-const REPO='lindaprice-wq/port',BRANCH='main',FILE='site/content/projects.json';
+const REPO='chyn-yu/portl',BRANCH='main',FILE='site/content/projects.json';
 const root=new URL('../',location.href);
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -19,7 +19,7 @@ function drawPreview(){ if(mode!=='projects'){pagesEditor.preview();return;}cons
 async function api(endpoint,options={}){
   const response=await fetch('https://api.github.com'+endpoint,{...options,headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',Authorization:'Bearer '+token,...(options.body?{'Content-Type':'application/json'}:{}),...options.headers}});
   const data=await response.json().catch(()=>({}));
-  if(!response.ok){if(response.status===401)throw Error('令牌无效或已过期，请重新连接。');if(response.status===403)throw Error('没有写入权限或请求受限，请确认令牌只选择 port，并允许 Contents: Read and write。');if(response.status===409||response.status===422)throw Error('仓库在保存时发生变化，请先备份修改文字，再重新连接以载入最新内容。');throw Error('GitHub 请求失败（'+response.status+'）：'+(data.message||'请稍后重试。'));}return data;
+  if(!response.ok){if(response.status===401)throw Error('令牌无效或已过期，请重新连接。');if(response.status===403)throw Error('没有写入权限或请求受限，请确认令牌只选择 portl，并允许 Contents: Read and write。');if(response.status===409||response.status===422)throw Error('仓库在保存时发生变化，请先备份修改文字，再重新连接以载入最新内容。');throw Error('GitHub 请求失败（'+response.status+'）：'+(data.message||'请稍后重试。'));}return data;
 }
 const repoApi=(endpoint,options)=>api('/repos/'+REPO+endpoint,options);
 const post=(endpoint,data)=>repoApi(endpoint,{method:'POST',body:JSON.stringify(data)});
@@ -72,7 +72,7 @@ async function publish(){
   }catch(error){status(error.message,true);}finally{busy=false;document.body.classList.remove('busy');syncButtons();}
 }
 function watchDeployment(version){clearInterval(poll);let tries=0;poll=setInterval(async()=>{try{const res=await fetch(new URL('content/projects.json?t='+Date.now(),root),{cache:'no-store'});const live=await res.json();if(live.updatedAt===version){clearInterval(poll);$('#save-state').textContent=dirty?'有未发布修改':'已发布到网站';status('发布完成。打开网站即可查看新内容。');}else if(++tries>=40){clearInterval(poll);status('修改已保存，发布仍在等待。可通过下方“查看发布进度”查看结果。');}}catch{if(++tries>=40)clearInterval(poll);}},8000);}
-$('#token-link').href='https://github.com/settings/personal-access-tokens/new?name=Lu%20Kehao%20Portfolio&description=Update%20portfolio%20content&target_name=lindaprice-wq&contents=write';
+$('#token-link').href='https://github.com/settings/personal-access-tokens/new?name=Lu%20Kehao%20Portfolio&description=Update%20portfolio%20content&target_name=chyn-yu&contents=write';
 $('#connect').addEventListener('click',connect);$('#token').addEventListener('keydown',e=>{if(e.key==='Enter')connect();});
 $('#publish').addEventListener('click',publish);
 $('#logout').addEventListener('click',()=>{token='';connected=false;fileSha='';$('#connect-panel').hidden=false;$('#logout').hidden=true;$('#connection').textContent='未连接';$('#connection').classList.remove('connected');status('已断开连接，令牌已清除。');syncButtons();});
