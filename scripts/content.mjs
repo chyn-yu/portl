@@ -21,7 +21,7 @@ export function renderContent(text,rel,content,defaults){
   }
   text=text.replace(/\/_next\/image\?url=([^&"'<>\s]+)(?:(?:&amp;|&)(?:w|q)=\d+)*/g,(_,encoded)=>decodeURIComponent(encoded));
   const section=(id,transform)=>{const start=text.indexOf('<section id="'+id+'"');if(start<0)throw Error('页面区块不存在：'+id);const end=text.indexOf('</section>',start)+10;text=text.slice(0,start)+transform(text.slice(start,end))+text.slice(end);};
-  const swap=(html,pairs)=>{const map=new Map(pairs.filter(([a,b])=>a!==b));if(!map.size)return html;const keys=[...map.keys()].sort((a,b)=>b.length-a.length);const re=new RegExp(keys.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'g');return html.replace(re,v=>map.get(v));};
+  const swap=(html,pairs)=>{const map=new Map(pairs.filter(([a])=>a.length).flatMap(([a,b])=>[[a,b],[a.replaceAll('&#x27;',"'"),b]]));if(!map.size)return html;const keys=[...map.keys()].sort((a,b)=>b.length-a.length);const re=new RegExp(keys.map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'g');return html.replace(re,v=>map.get(v));};
   section('work',part=>{
     const pairs=[];
     defaults.projects.forEach((old,i)=>{const p=projects[i];for(const k of ['title1','title2','description','cover','icon'])if(old[k])pairs.push([esc(old[k]),esc(p[k])]);if(old.video)pairs.push(['src="'+esc(old.video)+'"',p.video?'src="'+esc(p.video)+'"':'']);pairs.push([esc(old.title1+' '+old.title2),esc(p.title1+' '+p.title2)]);});

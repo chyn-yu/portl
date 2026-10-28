@@ -36,7 +36,7 @@ html[data-preview-theme="awards"] main > nav { mix-blend-mode: difference !impor
 #awards .award-directory-row > span:nth-child(2) { color: #777 !important; }
 #awards .award-directory-row > span:nth-child(3) { display: none !important; }/* Project catalog heading and three categories. */
 #awards > div[style*="grid"] > div:first-child > div:first-child::before {
-  content: 'Contents';
+  content: "Contents";
   display: block;
   font-family: 'NHG Display', 'Helvetica Neue', Arial, sans-serif;
   font-size: clamp(32px, 3.4vw, 64px);
@@ -55,7 +55,7 @@ html[data-preview-theme="awards"] main > nav { mix-blend-mode: difference !impor
     font-size: 0 !important;
   }
   #awards > div:has(> p):not([style*="border-top"]) > p:first-child::before {
-    content: 'Contents'; font-size: 40px; line-height: 1; display: block;
+    content: "Contents"; font-size: 40px; line-height: 1; display: block;
   }
 
 }

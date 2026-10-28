@@ -27,6 +27,8 @@ jobs:
         run: npm run build
       - name: Validate editable content
         run: node scripts/test-content.mjs
+      - name: Validate managed pages
+        run: node scripts/test-pages.mjs
       - name: Validate site
         run: npm run check
       - name: Upload static files
