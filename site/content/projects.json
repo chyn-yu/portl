@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T13:31:18.129Z",
+  "updatedAt": "2026-10-29T13:50:11.383Z",
   "projects": [
     {
       "id": "aiid",
@@ -21,9 +21,9 @@
       "description": "参与番茄小说APP“番茄种花季”运营活动主视觉设计。\n主要负责专题页面视觉方案执行，前期使用MJ、Chatgpt等AI工具产出页面视觉元素，后期使用ComfyUI等AIGC工具，进行FL\nUX模型训练、整理、测试等，参与团队内素材生成及产出。",
       "catalogTitle": "番茄小说\nAPP运营活动",
       "catalogDescription": "运营，种花，引流，Tomato，番茄",
-      "cover": "/assets/images/work/passkeys/passkeys-cover-1.jpg",
+      "cover": "/assets/uploads/passkeys-cover-e4dd73d0-8236-4c65-9c32-7f2e56600283.webp",
       "icon": "/assets/images/work/passkeys/passkeys-icon.svg",
-      "video": "/assets/images/work/passkeys/passkeys-cover-2.mp4",
+      "video": "",
       "href": "https://www.hellohello.is/case-studies/passkeys"
     },
     {
