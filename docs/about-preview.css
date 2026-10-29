@@ -121,3 +121,4 @@ main > .pin-spacer:has(#about),
 }
 /* One responsive image and SVG clipping avoid transformed bitmap tile layers. */
 .resume-reference-svg { display:block; width:100%; height:auto; overflow:visible; filter:invert(1); }
+.resume-reference-svg[data-resume-mode="editable"] { filter: none !important; }

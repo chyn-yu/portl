@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T15:45:27.769Z",
+  "updatedAt": "2026-10-29T16:05:15.396Z",
   "projects": [
     {
       "id": "aiid",
@@ -43,8 +43,8 @@
       "title1": "设计之外",
       "title2": "MY HOBBY",
       "description": "具备扎实的设计基础与良好的视觉表现力，关注细节与用户体验，擅长通过AIGC实现项目高增效推进\n优秀的沟通协作能力,能快速融入团队，高效执行任务并积极反馈。\n热爱生活，善于观察与发现美，爱好摄影并持续拓展审美视野",
-      "catalogTitle": "设计之外\nMY HOBBY",
-      "catalogDescription": "生活诗意，记录，My hobby diary，光影",
+      "catalogTitle": "LOOKIE\n品牌升级视频",
+      "catalogDescription": "LOGO,品牌色，UIUX，年轻",
       "cover": "/assets/images/work/alchemy/alchemy-cover-1.jpg",
       "icon": "/assets/images/work/alchemy/alchemy-icon.svg",
       "video": "/assets/images/work/alchemy/alchemy-cover-2.mp4",
@@ -63,7 +63,7 @@
       "resume": {
         "educationTitle": "教育经历",
         "school": "湖北美术学院 艺术与科技 大三",
-        "honors": "2025年校级一等奖学金\n“长江水生物诊断报告”获中国好创意思辨艺术类国赛三等奖\n“镂光剪影”获米兰设计周视觉传达三等奖\n“四大名楼”获计算机设计大赛三等奖",
+        "honors": "2025年校级一等奖学金\n“长江水生物诊断报告”获中国好创意思辨艺术类国赛三等奖\n“镂光剪影”获米兰设计周视觉传达三等奖\n                 获新质点奖\n“四大名楼”获计算机设计大赛三等奖",
         "projectsTitle": "项目经历",
         "projects": "2025年6月–2025年9月 | “走起GO”APP版本迭代\n2024年12月–2025年4月 | “番茄种花季”运营活动",
         "internshipTitle": "实习经历",
