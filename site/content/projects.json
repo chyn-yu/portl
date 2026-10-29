@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T13:12:39.846Z",
+  "updatedAt": "2026-10-29T13:31:18.129Z",
   "projects": [
     {
       "id": "aiid",
@@ -10,7 +10,7 @@
       "catalogTitle": "走起GO\nAPP改版升级",
       "catalogDescription": "链路，社区，迭代升级，Version Iteration",
       "cover": "/assets/uploads/aiid-cover-5bbe5e04-8a04-41b5-8351-a698b5826d38.webp",
-      "icon": "/assets/uploads/aiid-icon-dc868058-3272-408f-a43b-65aa623bbca4.webp",
+      "icon": "/assets/uploads/aiid-icon-3224ddc9-c3f7-4f2c-a91b-d36797a5ec4c.webp",
       "video": "",
       "href": "https://www.hellohello.is/case-studies/stateofai"
     },
@@ -33,9 +33,9 @@
       "description": "参与雅迪智能电动车HMI视觉设计，前期针对两轮车及四轮车车机壁纸开展竞品调研与趋势分析，建立视觉分类体系并提炼设计方向；基于调研结果进行多主题、多风格视觉探索，结合AI生成工具持续优化Prompt与画面表现，根据仪表盘实际显示效果及市场竞争力筛选方案，并完成系列化壁纸设计。",
       "catalogTitle": "雅迪\n车机壁纸设计",
       "catalogDescription": "风格探索，个性表达，Wallpaper design",
-      "cover": "/assets/images/work/grateful/grateful-cover-1.jpg",
+      "cover": "/assets/uploads/grateful-cover-d5cf84e3-b26a-4939-8b79-da37e4fb19d4.webp",
       "icon": "/assets/images/work/grateful/grateful-icon.svg",
-      "video": "/assets/images/work/grateful/grateful-cover-2.mp4",
+      "video": "",
       "href": "https://www.hellohello.is/case-studies/grateful"
     },
     {
