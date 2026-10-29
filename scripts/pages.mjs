@@ -1,4 +1,5 @@
 import {DEFAULT_PAGES as D} from '../site/page-defaults.mjs';
+import {previewComponent,previewMarkup} from './recognition-preview.mjs';
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
 function swap(s,pairs){const map=new Map(pairs.filter(([a])=>a.length));if(!map.size)return s;const re=new RegExp([...map.keys()].sort((a,b)=>b.length-a.length).map(v=>v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'g');return s.replace(re,v=>map.get(v));}
 function spanReplace(row,values){let i=0;return row.replace(/(<span\b[^>]*>)[\s\S]*?(<\/span>)/g,(_,a,b)=>a+esc(values[i++]||'')+b);}
@@ -19,7 +20,7 @@ export function renderPages(text,rel,content){
    part=part.replace('r.current.src="/assets/images/awards/awards-img-".concat(l,".jpg")','r.current.src=f[n].image');
    const digits=a.number.replace('+','').padStart(2,'0').split('').map(Number);part=part.replace('i=[3,0].map',`i=${JSON.stringify(digits)}.map`);
    part=part.replace('ref:j,style:h,children:"+"','ref:j,style:h,children:'+JSON.stringify(a.number.endsWith('+')?'+':''));
-   return part;
+   return previewComponent(part);
   });
  }
  if(rel==='index.html'){
@@ -38,7 +39,7 @@ export function renderPages(text,rel,content){
    let i=0;part=part.replace(/<div style="display:grid;grid-template-columns:1fr auto auto;[^\"]*">(?:<span\b[^>]*>[\s\S]*?<\/span>){3}<\/div>/g,row=>{const item=a.entries[i++];return spanReplace(row,[item.award,item.project,item.date]);});
    let summary=0;part=part.replace(/(<span style="[^"]*color:#777">)([^<]*)(<\/span>)/g,(all,x,v,z)=>D.recognitions.summary.split('\n').map(esc).includes(v)?x+esc(a.summary.split('\n')[summary++]||'')+z:all);
    const old=esc(D.recognitions.memberText).replace('the global ','the global<br>').replace('digital agencies.','digital<br>agencies.');part=part.replace(old,esc(a.memberText)).replace(old.replaceAll('&#x27;',"'"),esc(a.memberText));
-   return part;
+   return previewMarkup(part);
   });
   const data=JSON.stringify({about,defaults:D.about}).replaceAll('<','\\u003c');
   text=text.replace('</head>','<script>window.__MANAGED_ABOUT__='+data+';</script></head>');

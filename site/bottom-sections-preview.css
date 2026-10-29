@@ -12,4 +12,11 @@ main > footer img { filter: none !important; }/* Monochrome marks follow the whi
 #recognitions img[alt="SoDA"] { filter: none !important; }
 /* Keep the glass background faint on both desktop and mobile. */
 main > footer > video { opacity: .12 !important; }
-main > footer > div[style*="background"][style*="position"] { display: none !important; }
+main > footer > div[style*="background"][style*="position"] { display: none !important; }/* Fixed left-column artwork frame; the empty placeholder stays visible. */
+#recognitions .recognition-preview { flex-shrink: 0; }
+#recognitions > div[style*="grid"] > div:first-child { position: sticky; top: 88px; align-self: start; }
+#recognitions > div[style*="grid"] > div:first-child > div:nth-child(3),
+#recognitions > div:has(> img[alt="SoDA"]),
+#recognitions > div[style*="position:fixed"],
+#recognitions > div[style*="position: fixed"] { display: none !important; }
+@media(max-width:639px) { #recognitions .recognition-preview { margin-top: 24px; } }

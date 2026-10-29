@@ -15,7 +15,7 @@ async function walk(dir,rel=''){for(const entry of await fs.readdir(dir,{withFil
 await walk(source);await fs.mkdir(output,{recursive:true});
 const fingerprint=createHash('sha256');
 for(const rel of [...files].sort())if(/\.(?:html|css|js|mjs|json)$/.test(rel))fingerprint.update(rel).update(await fs.readFile(path.join(source,rel)));
-for(const script of ['build.mjs','content.mjs','pages.mjs'])fingerprint.update(await fs.readFile(path.join(root,'scripts',script)));
+for(const script of ['build.mjs','content.mjs','pages.mjs','recognition-preview.mjs'])fingerprint.update(await fs.readFile(path.join(root,'scripts',script)));
 const revision=fingerprint.digest('hex').slice(0,12);
 function transform(text,rel){
   text=renderContent(text,rel,content,defaults);
