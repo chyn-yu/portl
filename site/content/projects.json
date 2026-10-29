@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T12:48:33.661Z",
+  "updatedAt": "2026-10-29T13:04:25.353Z",
   "projects": [
     {
       "id": "aiid",
@@ -9,9 +9,9 @@
       "description": "参与走起GO移动端产品v5.1.3-v5.1.5链路改版。\n主要参与产品视觉升级优化，前期对接业务需求，进行用户调研，页面逻辑规划和视觉风格定位，后期参与重构页面布局，优化用户操作流程，制定并输出视觉方案及10+页面绘制。",
       "catalogTitle": "走起GO\nAPP改版升级",
       "catalogDescription": "链路，社区，迭代升级，Version Iteration",
-      "cover": "/assets/images/work/aiid/aiid-cover-1.jpg",
-      "icon": "/assets/uploads/aiid-icon-0a1cb3a6-0180-4fc1-b1f5-57a91038192e.webp",
-      "video": "/assets/images/work/aiid/aiid-cover-compatible.mp4",
+      "cover": "/assets/uploads/aiid-cover-25d3820e-5580-4989-9347-90fcfaa28719.webp",
+      "icon": "/assets/uploads/aiid-icon-98aa4e27-a4ff-41b8-90a4-597939b97339.webp",
+      "video": "",
       "href": "https://www.hellohello.is/case-studies/stateofai"
     },
     {
