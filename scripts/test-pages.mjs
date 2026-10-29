@@ -22,4 +22,5 @@ assert(html.includes('设计奖项'));
 const aboutCss=renderPages(await fs.readFile(new URL('about-preview.css',root),'utf8'),'about-preview.css',sample);assert(aboutCss.includes('src*="new-portrait.webp"'));
 const old={version:1,projects:structuredClone(content.projects)};validateContent(old);assert.deepEqual(old.pages,DEFAULT_PAGES);
 assert(html.includes('class="recognition-preview"'));assert(js.includes('className:"recognition-preview"'));assert(!js.slice(js.indexOf('16527:'),js.indexOf('7924:',js.indexOf('16527:'))).includes('ref:t,style:{position:"fixed"'));
+assert(html.includes('object-fit:contain;object-position:center;'));assert(js.includes('objectFit:"contain",objectPosition:"center"'));
 console.log('Page tests passed: legacy migration, About photos/title/resume, catalog labels, award text/images/count, SSR/client parity and escaped content.');
