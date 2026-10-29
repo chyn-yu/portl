@@ -83,7 +83,7 @@ main > .pin-spacer:has(#about),
 /* The supplied transparent artwork preserves exact glyphs, spacing and colors. */
 .about-resume-artwork {
   position: absolute; z-index: 6; left: 39.5%; top: 26.7%;
-  width: 31.3%; aspect-ratio: 767 / 756;
+  width: 31.3%; aspect-ratio: 768 / 756;
 }
 .resume-reference-plane {
   position: absolute; width: 767px; height: 756px; transform-origin: top left;
