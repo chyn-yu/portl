@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T09:26:55.402Z",
+  "updatedAt": "2026-10-29T09:36:00.871Z",
   "projects": [
     {
       "id": "aiid",
@@ -16,9 +16,9 @@
     },
     {
       "id": "passkeys",
-      "title1": "Passkeys",
-      "title2": "Developer Kit",
-      "description": "A developer-first authentication product that needed to evolve its brand from a technical tool to an enterprise platform, without losing developer trust.",
+      "title1": "番茄小说",
+      "title2": "APP运营活动",
+      "description": "参与番茄小说APP“番茄种花季”运营活动主视觉设计。\n主要负责专题页面视觉方案执行，前期使用MJ、Chatgpt等AI工具产出页面视觉元素，后期使用ComfyUI等AIGC工具，进行FL\nUX模型训练、整理、测试等，参与团队内素材生成及产出。",
       "catalogTitle": "番茄小说\nAPP运营活动",
       "catalogDescription": "运营，种花，引流，Tomato，番茄",
       "cover": "/assets/images/work/passkeys/passkeys-cover-1.jpg",
@@ -28,9 +28,9 @@
     },
     {
       "id": "grateful",
-      "title1": "Grateful",
-      "title2": "Payments",
-      "description": "Exodus wanted to move stablecoin payments into the mainstream. Brand strategy, positioning, and go-to-market messaging for Exodus Pay, plus full brand identity and product experience for Grateful.",
+      "title1": "雅迪",
+      "title2": "车机壁纸设计",
+      "description": "参与雅迪智能电动车HMI视觉设计，前期针对两轮车及四轮车车机壁纸开展竞品调研与趋势分析，建立视觉分类体系并提炼设计方向；基于调研结果进行多主题、多风格视觉探索，结合AI生成工具持续优化Prompt与画面表现，根据仪表盘实际显示效果及市场竞争力筛选方案，并完成系列化壁纸设计。",
       "catalogTitle": "雅迪\n车机壁纸设计",
       "catalogDescription": "风格探索，个性表达，Wallpaper design",
       "cover": "/assets/images/work/grateful/grateful-cover-1.jpg",
@@ -40,9 +40,9 @@
     },
     {
       "id": "alchemy",
-      "title1": "Alchemy",
-      "title2": "Blockchain",
-      "description": "One of the world's largest blockchain infrastructure platforms had a vision: a new generation of builders was coming. The challenge was translating that belief into a brand that developers and enterprise teams would actually trust.",
+      "title1": "设计之外",
+      "title2": "MY HOBBY",
+      "description": "具备扎实的设计基础与良好的视觉表现力，关注细节与用户体验，擅长通过AIGC实现项目高增效推进\n优秀的沟通协作能力,能快速融入团队，高效执行任务并积极反馈。\n热爱生活，善于观察与发现美，爱好摄影并持续拓展审美视野",
       "catalogTitle": "设计之外\nMY HOBBY",
       "catalogDescription": "生活诗意，记录，My hobby diary，光影",
       "cover": "/assets/images/work/alchemy/alchemy-cover-1.jpg",
