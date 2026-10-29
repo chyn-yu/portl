@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T09:36:00.871Z",
+  "updatedAt": "2026-10-29T12:48:33.661Z",
   "projects": [
     {
       "id": "aiid",
@@ -10,7 +10,7 @@
       "catalogTitle": "走起GO\nAPP改版升级",
       "catalogDescription": "链路，社区，迭代升级，Version Iteration",
       "cover": "/assets/images/work/aiid/aiid-cover-1.jpg",
-      "icon": "/assets/images/work/aiid/aiid-icon.svg",
+      "icon": "/assets/uploads/aiid-icon-0a1cb3a6-0180-4fc1-b1f5-57a91038192e.webp",
       "video": "/assets/images/work/aiid/aiid-cover-compatible.mp4",
       "href": "https://www.hellohello.is/case-studies/stateofai"
     },
