@@ -1,5 +1,5 @@
-import {validateContent} from '../content-schema.mjs?v=b71d57dac6f0';
-import {createPagesEditor,writePath} from './pages-editor.mjs?v=b71d57dac6f0';
+import {validateContent} from '../content-schema.mjs?v=1274deecd2d5';
+import {createPagesEditor,writePath} from './pages-editor.mjs?v=1274deecd2d5';
 const REPO='chyn-yu/portl',BRANCH='main',FILE='site/content/projects.json';
 const root=new URL('../',location.href);
 const $=s=>document.querySelector(s);
@@ -7,7 +7,7 @@ const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll
 let content,baseline,index=0,token='',fileSha='',dirty=false,busy=false,connected=false,poll;
 let mode='projects';
 const uploads=new Map();
-const pagesEditor=createPagesEditor({getContent:()=>content,media});
+const pagesEditor=createPagesEditor({getContent:()=>content,media,onChange:markDirty});
 const status=(message,error=false)=>{ $('#status').textContent=message;$('#status').classList.toggle('error',error); };
 function markDirty(){dirty=true;$('#save-state').textContent='有未发布修改';syncButtons();}
 function syncButtons(){ $('#publish').disabled=busy||!connected||!dirty;$('#publish').textContent=busy?'正在保存…':connected?'保存并发布':'连接后发布';$('#connect').disabled=busy;$('#reset').disabled=busy||!dirty;$('#logout').disabled=busy; }
@@ -85,5 +85,5 @@ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.return
 try{const res=await fetch(new URL('content/projects.json?t='+Date.now(),root),{cache:'no-store'});if(!res.ok)throw Error('无法载入作品内容。');content=validateContent(await res.json());baseline=structuredClone(content);drawEditor();syncButtons();}catch(error){status(error.message,true);}
 
 $('#sections').addEventListener('click',e=>{const tab=e.target.closest('[data-mode]');if(!tab||busy||!content)return;mode=tab.dataset.mode;$('#sections').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===tab));if(mode==='projects')drawEditor();else pagesEditor.reset(mode);});
-$('#projects').addEventListener('click',e=>{const item=e.target.closest('[data-page-tab]');if(item&&!busy)pagesEditor.select(item.dataset.pageTab);});
+$('#projects').addEventListener('click',e=>{if(busy)return;if(e.target.closest('[data-add-recognition]')){pagesEditor.add();return;}const item=e.target.closest('[data-page-tab]');if(item)pagesEditor.select(item.dataset.pageTab);});
 $('#editor').addEventListener('input',e=>{if(e.target.dataset.pageField){writePath(content,e.target.dataset.pageField,e.target.value);markDirty();pagesEditor.nav();pagesEditor.preview();}});

@@ -23,4 +23,7 @@ const aboutCss=renderPages(await fs.readFile(new URL('about-preview.css',root),'
 const old={version:1,projects:structuredClone(content.projects)};validateContent(old);assert.deepEqual(old.pages,DEFAULT_PAGES);
 assert(html.includes('class="recognition-preview"'));assert(js.includes('className:"recognition-preview"'));assert(!js.slice(js.indexOf('16527:'),js.indexOf('7924:',js.indexOf('16527:'))).includes('ref:t,style:{position:"fixed"'));
 assert(html.includes('object-fit:contain;object-position:center;'));assert(js.includes('objectFit:"contain",objectPosition:"center"'));
+const expanded=structuredClone(content);expanded.pages.recognitions.entries=[...expanded.pages.recognitions.entries.slice(0,2),{award:'新增荣誉测试',project:'新项目',date:'2026',image:'/assets/images/awards/award-placeholder.svg'}];validateContent(expanded);
+const expandedHtml=renderPages(renderContent(await fs.readFile(new URL('index.html',root),'utf8'),'index.html',expanded,defaults),'index.html',expanded);assert.equal((expandedHtml.match(/class="recognition-row"/g)||[]).length,3);assert(expandedHtml.includes('新增荣誉测试'));
+const empty=structuredClone(expanded);empty.pages.recognitions.entries=[];validateContent(empty);const emptyHtml=renderPages(renderContent(await fs.readFile(new URL('index.html',root),'utf8'),'index.html',empty,defaults),'index.html',empty);assert(!emptyHtml.includes('class="recognition-row"'));
 console.log('Page tests passed: legacy migration, About photos/title/resume, catalog labels, award text/images/count, SSR/client parity and escaped content.');

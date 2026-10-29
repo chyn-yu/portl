@@ -1,7 +1,7 @@
 export const readPath=(value,path)=>path.split('.').reduce((v,k)=>v[k],value);
 export function writePath(value,path,next){const keys=path.split('.'),last=keys.pop();readPath(value,keys.join('.'))[last]=next;}
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-export function createPagesEditor({getContent,media}){
+export function createPagesEditor({getContent,media,onChange}){
  let mode='about',selected='overview';const $=s=>document.querySelector(s);
  const field=(path,label,rows=0,hint='')=>`<label for="page-${path}">${label}</label>${rows?`<textarea id="page-${path}" data-page-field="${path}" rows="${rows}">${esc(readPath(getContent(),path))}</textarea>`:`<input id="page-${path}" data-page-field="${path}" value="${esc(readPath(getContent(),path))}">`}${hint?`<p class="hint">${hint}</p>`:''}`;
  const image=(path,label)=>`<label>${label}</label><div class="page-image-field"><img src="${esc(media(readPath(getContent(),path)))}" alt="${label}"><input type="file" data-image-path="${path}" accept="image/jpeg,image/png,image/webp"></div>`;
@@ -23,5 +23,7 @@ export function createPagesEditor({getContent,media}){
   if(mode==='recognitions'&&selected!=='overview'){const r=p.recognitions.entries[Number(selected)];html=`<img src="${esc(media(r.image))}" alt="荣誉配图"><div class="catalog-preview"><b>${esc(r.award)}</b><p>${esc(r.project)}<br>${esc(r.date)}</p></div>`;}
   $('#preview').innerHTML=html;
  }
- return {render,preview,nav,select:(tab)=>render(mode,tab),reset:(next)=>render(next,'overview')};
+ function add(){const entries=getContent().pages.recognitions.entries;if(entries.length>=100){alert('最多可以添加 100 项荣誉。');return;}entries.push({award:'新增荣誉',project:'',date:'',image:'/assets/images/awards/award-placeholder.svg'});onChange();render('recognitions',String(entries.length-1));document.querySelector('[data-page-field$=".award"]')?.focus();}
+ const drawNav=nav;nav=()=>{drawNav();if(mode==='recognitions')$('#projects').insertAdjacentHTML('afterbegin','<button type="button" data-add-recognition class="add-recognition">＋ 新增荣誉</button>');};
+ return {render,preview,nav,add,select:(tab)=>render(mode,tab),reset:(next)=>render(next,'overview')};
 }

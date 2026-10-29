@@ -1,5 +1,7 @@
 const imageStyle='position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",objectPosition:"center",display:"block",opacity:0';
 export function previewComponent(part){
+ part=part.replaceAll('children:f.map((e,t)=>(0,n.jsxs)("div",{','children:f.map((e,t)=>(0,n.jsxs)("div",{className:"recognition-row",');
+ part=part.replaceAll('color:null!==w&&w!==t?"#2e2e2e":"#fafafa"','color:"#fafafa"').replaceAll('color:null!==w&&w!==t?"#2e2e2e":w===t?"#fafafa":"#777"','color:"#777"').replaceAll('color:null!==w&&w!==t?"#2e2e2e":"#777"','color:"#777"');
  const preview='(0,n.jsx)("div",{ref:t,className:"recognition-preview",style:{position:"relative",width:"100%",aspectRatio:"4 / 5",backgroundColor:"#080808",overflow:"hidden"},children:(0,n.jsx)("img",{ref:r,alt:"",style:{'+imageStyle+'}})})';
  const oldStart=part.indexOf('!e&&(0,n.jsx)("div",{ref:t,style:{position:"fixed"'),oldEnd=part.indexOf(',!e&&(0,n.jsx)("div",{ref:E',oldStart);
  if(oldStart<0||oldEnd<0)throw Error('Recognition floating image template not found');
