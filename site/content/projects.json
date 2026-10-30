@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T15:24:27.605Z",
+  "updatedAt": "2026-10-30T16:25:09.061Z",
   "projects": [
     {
       "id": "aiid",
@@ -24,7 +24,7 @@
       "cover": "/assets/uploads/passkeys-cover-e4dd73d0-8236-4c65-9c32-7f2e56600283.webp",
       "icon": "/assets/images/work/passkeys/passkeys-icon.svg",
       "video": "",
-      "href": "https://www.hellohello.is/case-studies/passkeys"
+      "href": "https://chyn-yu.github.io/portl/projects/tomato/"
     },
     {
       "id": "grateful",
