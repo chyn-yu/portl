@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T18:54:21.077Z",
+  "updatedAt": "2026-10-30T19:02:08.536Z",
   "projects": [
     {
       "id": "aiid",
@@ -34,7 +34,7 @@
       "catalogTitle": "雅迪\n车机壁纸设计",
       "catalogDescription": "风格探索，个性表达，Wallpaper design",
       "cover": "/assets/uploads/grateful-cover-d5cf84e3-b26a-4939-8b79-da37e4fb19d4.webp",
-      "icon": "/assets/images/work/grateful/grateful-icon.svg",
+      "icon": "/assets/uploads/grateful-icon-2ae270ca-22da-40ad-968a-3bc1c1b92b9f.webp",
       "video": "",
       "href": "https://chyn-yu.github.io/portl/projects/yadea/"
     },
