@@ -16,4 +16,7 @@ if(!html.includes('Lu Kehao — Portfolio'))failures.push('Portfolio title missi
 const detail=fs.readFileSync(path.join(docs,'projects/lookie/index.html'),'utf8');
 if(/__PROJECT_[A-Z]+__/.test(detail)||!detail.includes('<video controls playsinline'))failures.push('LOOKIE video page is incomplete');
 for(const match of detail.matchAll(/(?:src|poster)="(\/portl\/[^"?#]+)"/g))if(!fs.existsSync(path.join(docs,match[1].slice('/portl/'.length))))failures.push('Missing video page resource: '+match[1]);
+const pdfDetail=fs.readFileSync(path.join(docs,'projects/yadea/index.html'),'utf8');
+if(/__(?:PROJECT_[A-Z]+|PDF_PAGES)__/.test(pdfDetail)||(pdfDetail.match(/class="pdf-page"/g)||[]).length!==3)failures.push('Yadea PDF preview is incomplete');
+for(const match of pdfDetail.matchAll(/(?:src|href)="(\/portl\/assets\/[^"?#]+)"/g))if(!fs.existsSync(path.join(docs,match[1].slice('/portl/'.length))))failures.push('Missing PDF page resource: '+match[1]);
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1}else console.log('Checks passed: JavaScript syntax, static resource paths, personal title and contact handler.');

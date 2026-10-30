@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T11:51:07.062Z",
+  "updatedAt": "2026-10-30T15:24:27.605Z",
   "projects": [
     {
       "id": "aiid",
@@ -36,7 +36,7 @@
       "cover": "/assets/uploads/grateful-cover-d5cf84e3-b26a-4939-8b79-da37e4fb19d4.webp",
       "icon": "/assets/images/work/grateful/grateful-icon.svg",
       "video": "",
-      "href": "https://www.hellohello.is/case-studies/grateful"
+      "href": "https://chyn-yu.github.io/portl/projects/yadea/"
     },
     {
       "id": "alchemy",

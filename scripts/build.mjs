@@ -7,6 +7,7 @@ import {renderPages} from './pages.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=path.join(root,'site'),output=path.join(root,'docs');
 const content=await loadContent(source);
+const yadeaPages=JSON.parse(await fs.readFile(path.join(source,'assets/documents/yadea/pages.json'),'utf8'));
 const defaults=JSON.parse(await fs.readFile(path.join(source,'content/defaults.json'),'utf8'));
 const base=(process.env.BASE_PATH||'/portl').replace(/\/$/,'');
 const rootFiles=(await fs.readdir(source)).filter(f=>/\.(?:css|js|json|ico|png)$/.test(f));
@@ -20,11 +21,12 @@ const revision=fingerprint.digest('hex').slice(0,12);
 function transform(text,rel){
   text=renderContent(text,rel,content,defaults);
   text=renderPages(text,rel,content);
-  if(rel==='projects/lookie/index.html'){
-    const project=content.projects.find(p=>p.id==='alchemy');
+  if(rel==='projects/lookie/index.html'||rel==='projects/yadea/index.html'){
+    const project=content.projects.find(p=>p.id===(rel.includes('/yadea/')?'grateful':'alchemy'));
     const escape=value=>value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
     const fields={__PROJECT_TITLE__:escape([project.title1,project.title2].filter(Boolean).join(' ')),__PROJECT_HEADING__:[project.title1,project.title2].filter(Boolean).map(line=>'<span>'+escape(line)+'</span>').join(''),__PROJECT_COVER__:escape(project.cover),__PROJECT_DESCRIPTION__:escape(project.description)};
     text=text.replace(/__PROJECT_(?:TITLE|HEADING|COVER|DESCRIPTION)__/g,key=>fields[key]);
+    text=text.replace('__PDF_PAGES__',yadeaPages.map((slices,page)=>'<section class="pdf-page" aria-label="PDF 第 '+(page+1)+' 页">'+slices.map((image,i)=>'<img src="'+image.src+'" width="'+image.width+'" height="'+image.height+'" alt="雅迪车机壁纸设计，第 '+(page+1)+' 页，第 '+(i+1)+' 部分" loading="'+(page===0&&i===0?'eager':'lazy')+'" decoding="async">').join('')+'</section>').join(''));
   }
   if(rel.endsWith('.js')){
     text=text.replaceAll('unoptimized:!1','unoptimized:!0');
