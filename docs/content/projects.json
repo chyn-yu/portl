@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T19:57:35.522Z",
+  "updatedAt": "2026-10-30T20:33:46.884Z",
   "projects": [
     {
       "id": "aiid",
@@ -87,21 +87,27 @@
       "entries": [
         {
           "award": "中国好创意思辨艺术类国赛三等奖",
-          "project": "长江水生物诊断报告",
+          "project": "长江水生物诊断报告1",
           "date": "Feb, 2026",
           "image": "/assets/uploads/pages-recognitions-entries-0-image-1734e2e3-e056-4e75-a6cc-d07ad77d01a3.webp"
         },
         {
-          "award": "——",
-          "project": "长江水生物诊断报告",
-          "date": "Feb, 2024",
+          "award": "中国好创意思辨艺术类国赛三等奖",
+          "project": "长江水生物诊断报告2",
+          "date": "Feb, 2026",
           "image": "/assets/uploads/pages-recognitions-entries-1-image-0841f1ed-af99-4992-868d-b1731db4e8e1.webp"
         },
         {
-          "award": "米兰设计周视觉传达三等奖",
-          "project": "镂光剪影",
-          "date": "无",
+          "award": "米兰设计周视觉传达三等奖\n新质点奖",
+          "project": "镂光剪影1",
+          "date": "Feb, 2026",
           "image": "/assets/uploads/pages-recognitions-entries-2-image-44939452-9132-41a8-a94a-e8fa9133963c.webp"
+        },
+        {
+          "award": "米兰设计周视觉传达三等奖\n新质点奖",
+          "project": "镂光剪影2",
+          "date": "Feb, 2026",
+          "image": "/assets/uploads/pages-recognitions-entries-3-image-f0a88704-1a82-4f5a-86d9-d6c9223cd348.webp"
         }
       ]
     }

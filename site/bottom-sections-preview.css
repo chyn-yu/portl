@@ -24,6 +24,15 @@ main > footer > div[style*="background"][style*="position"] { display: none !imp
 #recognitions .recognition-row { opacity: 1; transition: opacity 180ms ease; cursor: pointer; min-height: 44px; touch-action: manipulation; }
 #recognitions .recognition-preview img { pointer-events:none; transition: opacity 80ms linear; }
 #recognitions .recognition-row span { transition: none !important; }
+#recognitions .recognition-row > span:first-child,
+#recognitions .recognition-row > div > span:first-child {
+  white-space: pre-line !important;
+  overflow-wrap: anywhere;
+  line-height: 1.2 !important;
+  min-width: 0;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
 #recognitions div:has(> .recognition-row:hover) > .recognition-row:not(:hover) { opacity: .28; }
 @media(prefers-reduced-motion:reduce) { #recognitions .recognition-row, #recognitions .recognition-preview img { transition:none; } }
 #recognitions .recognition-row:hover span { color: #fafafa !important; }
