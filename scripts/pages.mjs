@@ -18,8 +18,15 @@ export function renderPages(text,rel,content){
    part=swap(part,[[JSON.stringify(D.recognitions.title),JSON.stringify(a.title)],[JSON.stringify(D.recognitions.subtitle),JSON.stringify(a.subtitle)],[JSON.stringify('30+'),JSON.stringify(a.number)],[JSON.stringify(D.recognitions.logo),JSON.stringify(a.logo)],[JSON.stringify(D.recognitions.memberText),JSON.stringify(a.memberText)]]);
    part=part.replace('children:["Proud members of SoDA, the global",(0,n.jsx)("br",{}),"network of the world\'s leading digital",(0,n.jsx)("br",{}),"agencies."]','children:'+JSON.stringify(a.memberText));
    part=part.replace('r.current.src="/assets/images/awards/awards-img-".concat(l,".jpg")','r.current.src=f[n].image');
-   const digits=a.number.replace('+','').padStart(2,'0').split('').map(Number);part=part.replace('i=[3,0].map',`i=${JSON.stringify(digits)}.map`);
+   const isNumber=/^\d{1,2}\+?$/.test(a.number);
+   const digits=isNumber?a.number.replace('+','').padStart(2,'0').split('').map(Number):[0,0];part=part.replace('i=[3,0].map',`i=${JSON.stringify(digits)}.map`);
    part=part.replace('ref:j,style:h,children:"+"','ref:j,style:h,children:'+JSON.stringify(a.number.endsWith('+')?'+':''));
+   if(!isNumber){
+    const start=part.indexOf('(0,n.jsxs)("div",{style:{display:"flex",alignItems:"flex-end",fontVariantNumeric:"tabular-nums"}');
+    const end=part.indexOf('}),(0,n.jsx)("p",',start);
+    if(start<0||end<0)throw Error('荣誉大字模板缺失');
+    part=part.slice(0,start)+'(0,n.jsx)("div",{className:"recognition-heading",style:h,children:'+JSON.stringify(a.number)+'})'+part.slice(end+2);
+   }
    return previewComponent(part);
   });
  }
@@ -32,6 +39,13 @@ export function renderPages(text,rel,content){
    return part.replace(/(<span style="[^"]*color:#777">)(项目运营|改版升级|AIGC)(<\/span>)/g,(_,x,v,z)=>x+esc(catalog.categories.split('\n')[i++]||'')+z);
   });
   section('recognitions',part=>{
+   if(!/^\d{1,2}\+?$/.test(a.number)){
+    const start=part.indexOf('<div style="display:flex;align-items:flex-end;font-variant-numeric:tabular-nums">');
+    const ending='</span></div>',end=part.indexOf(ending,start);
+    if(start<0||end<0)throw Error('荣誉大字 HTML 模板缺失');
+    const style=/<span style="([^"]+)"/.exec(part.slice(start,end))[1];
+    part=part.slice(0,start)+'<div class="recognition-heading" style="'+style+'">'+esc(a.number)+'</div>'+part.slice(end+ending.length);
+   }
    if(!a.number.endsWith('+'))part=part.replace('>+</span>','></span>');
    part=swap(part,[[esc(D.recognitions.title),esc(a.title)],[esc(D.recognitions.subtitle),esc(a.subtitle)],[D.recognitions.logo,a.logo]]);
    const rows=[...part.matchAll(/<div style="display:grid;grid-template-columns:1fr auto auto;[^\"]*">(?:<span\b[^>]*>[\s\S]*?<\/span>){3}<\/div>/g)];

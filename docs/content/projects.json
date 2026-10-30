@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T20:33:46.884Z",
+  "updatedAt": "2026-10-30T20:59:46.112Z",
   "projects": [
     {
       "id": "aiid",
@@ -79,10 +79,10 @@
     },
     "recognitions": {
       "title": "Awards & Recognition",
-      "number": "30+",
+      "number": "Click",
       "subtitle": "Awards & Recognitions",
       "summary": "2x Framer Awards\n4x FWA Awards\n9x Awwwards\n7x Latin American Design Awards\n4x CSS Design Awards\n1x Webby Awards\n1x BID",
-      "logo": "/assets/images/awards/awards-soda-img.png",
+      "logo": "/assets/uploads/pages-recognitions-logo-d8765b27-5b50-4b1e-98de-ec8330b74ab9.webp",
       "memberText": "Proud members of SoDA, the global network of the world's leading digital agencies.",
       "entries": [
         {
@@ -108,6 +108,24 @@
           "project": "镂光剪影2",
           "date": "Feb, 2026",
           "image": "/assets/uploads/pages-recognitions-entries-3-image-f0a88704-1a82-4f5a-86d9-d6c9223cd348.webp"
+        },
+        {
+          "award": "米兰设计周视觉传达三等奖\n新质点奖",
+          "project": "镂光剪影3",
+          "date": "Feb, 2026",
+          "image": "/assets/uploads/pages-recognitions-entries-4-image-764b6dba-ce58-460d-8690-590920287dea.webp"
+        },
+        {
+          "award": "计算机设计大赛三等奖",
+          "project": "徽境重构",
+          "date": "Feb, 2026",
+          "image": "/assets/uploads/pages-recognitions-entries-5-image-752982c2-5870-4d17-a7d0-ea9ba00d96d3.webp"
+        },
+        {
+          "award": "理想江汉时尚季KV",
+          "project": "-",
+          "date": "Feb, 2026",
+          "image": "/assets/uploads/pages-recognitions-entries-6-image-f9238a2f-97fb-48e2-8337-0f331214d2d4.webp"
         }
       ]
     }

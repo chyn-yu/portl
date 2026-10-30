@@ -36,3 +36,5 @@ main > footer > div[style*="background"][style*="position"] { display: none !imp
 #recognitions div:has(> .recognition-row:hover) > .recognition-row:not(:hover) { opacity: .28; }
 @media(prefers-reduced-motion:reduce) { #recognitions .recognition-row, #recognitions .recognition-preview img { transition:none; } }
 #recognitions .recognition-row:hover span { color: #fafafa !important; }
+
+#recognitions img[alt="SoDA"] { filter: invert(1) !important; }

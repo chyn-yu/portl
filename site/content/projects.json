@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T20:55:50.768Z",
+  "updatedAt": "2026-10-30T20:59:46.112Z",
   "projects": [
     {
       "id": "aiid",
@@ -79,7 +79,7 @@
     },
     "recognitions": {
       "title": "Awards & Recognition",
-      "number": "10",
+      "number": "Click",
       "subtitle": "Awards & Recognitions",
       "summary": "2x Framer Awards\n4x FWA Awards\n9x Awwwards\n7x Latin American Design Awards\n4x CSS Design Awards\n1x Webby Awards\n1x BID",
       "logo": "/assets/uploads/pages-recognitions-logo-d8765b27-5b50-4b1e-98de-ec8330b74ab9.webp",

@@ -1,4 +1,4 @@
-import {DEFAULT_PAGES} from './page-defaults.mjs?v=5803ebdce729';
+import {DEFAULT_PAGES} from './page-defaults.mjs?v=f6c24c02a7aa';
 export const IDS = ['aiid','passkeys','grateful','alchemy'];
 export function validateContent(value) {
   if (!value || value.version !== 1 || !Array.isArray(value.projects) || value.projects.length !== 4) throw Error('作品数据格式不正确，需要保留四个作品。');
@@ -20,7 +20,7 @@ export function validateContent(value) {
   for(const k of ['title','heading','categories'])limit(catalog[k],500,'目录 '+k,k!=='categories');
   if(catalog.categories.split('\n').length!==3||catalog.categories.split('\n').some(v=>!v.trim()))throw Error('目录分类需要填写三项，每项一行。');
   for(const k of ['title','number','subtitle','summary','memberText'])limit(recognitions[k],2000,'荣誉 '+k,k==='title');
-  if(!/^\d{1,2}\+?$/.test(recognitions.number))throw Error('荣誉数字请输入 0–99，可以在末尾加 +。');
+  limit(recognitions.number,20,'荣誉页左侧大字');
   if(recognitions.summary.split('\n').length!==7||recognitions.summary.split('\n').some(v=>!v.trim()))throw Error('荣誉统计说明需要填写七项，每项一行。');
   media(recognitions.logo,'荣誉页标志');
   if(!Array.isArray(recognitions.entries)||recognitions.entries.length>100)throw Error('荣誉条目最多可以添加 100 项。');
