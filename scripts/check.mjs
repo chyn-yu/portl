@@ -13,4 +13,7 @@ const layout=fs.readFileSync(path.join(docs,'_next/static/chunks/app/layout-6d0f
 if(layout.includes('api.hsforms.com')||layout.includes('api.ipify.org'))failures.push('Original form service remains');
 if(!layout.includes('mailto:1810438404@qq.com'))failures.push('Public contact email missing');
 if(!html.includes('Lu Kehao — Portfolio'))failures.push('Portfolio title missing');
+const detail=fs.readFileSync(path.join(docs,'projects/lookie/index.html'),'utf8');
+if(/__PROJECT_[A-Z]+__/.test(detail)||!detail.includes('<video controls playsinline'))failures.push('LOOKIE video page is incomplete');
+for(const match of detail.matchAll(/(?:src|poster)="(\/portl\/[^"?#]+)"/g))if(!fs.existsSync(path.join(docs,match[1].slice('/portl/'.length))))failures.push('Missing video page resource: '+match[1]);
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1}else console.log('Checks passed: JavaScript syntax, static resource paths, personal title and contact handler.');

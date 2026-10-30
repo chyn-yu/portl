@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T17:36:44.772Z",
+  "updatedAt": "2026-10-30T11:51:07.062Z",
   "projects": [
     {
       "id": "aiid",
@@ -45,10 +45,10 @@
       "description": "在lookie 的视觉升级中，运用AfterEffects制作动效，设计宝箱开启、元素展示等反馈动画、优化交互体验",
       "catalogTitle": "LOOKIE\n品牌升级视频",
       "catalogDescription": "LOGO,品牌色，UIUX，年轻",
-      "cover": "/assets/uploads/alchemy-cover-32fa1f18-b675-4299-b990-548d6f0b5a1b.webp",
+      "cover": "/assets/uploads/alchemy-cover-7bd0d1bc-9381-46e0-8372-3422dee6ed53.webp",
       "icon": "/assets/images/work/alchemy/alchemy-icon.svg",
       "video": "",
-      "href": "https://www.hellohello.is/case-studies/alchemy"
+      "href": "https://chyn-yu.github.io/portl/projects/lookie/"
     }
   ],
   "pages": {

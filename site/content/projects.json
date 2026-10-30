@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T11:39:44.768Z",
+  "updatedAt": "2026-10-30T11:51:07.062Z",
   "projects": [
     {
       "id": "aiid",
@@ -48,7 +48,7 @@
       "cover": "/assets/uploads/alchemy-cover-7bd0d1bc-9381-46e0-8372-3422dee6ed53.webp",
       "icon": "/assets/images/work/alchemy/alchemy-icon.svg",
       "video": "",
-      "href": "https://www.hellohello.is/case-studies/alchemy"
+      "href": "https://chyn-yu.github.io/portl/projects/lookie/"
     }
   ],
   "pages": {

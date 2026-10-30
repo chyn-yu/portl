@@ -20,6 +20,12 @@ const revision=fingerprint.digest('hex').slice(0,12);
 function transform(text,rel){
   text=renderContent(text,rel,content,defaults);
   text=renderPages(text,rel,content);
+  if(rel==='projects/lookie/index.html'){
+    const project=content.projects.find(p=>p.id==='alchemy');
+    const escape=value=>value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
+    const fields={__PROJECT_TITLE__:escape([project.title1,project.title2].filter(Boolean).join(' ')),__PROJECT_HEADING__:[project.title1,project.title2].filter(Boolean).map(line=>'<span>'+escape(line)+'</span>').join(''),__PROJECT_COVER__:escape(project.cover),__PROJECT_DESCRIPTION__:escape(project.description)};
+    text=text.replace(/__PROJECT_(?:TITLE|HEADING|COVER|DESCRIPTION)__/g,key=>fields[key]);
+  }
   if(rel.endsWith('.js')){
     text=text.replaceAll('unoptimized:!1','unoptimized:!0');
     text=text.replace('t.GoogleAnalytics=function(e){','t.GoogleAnalytics=function(e){return null;');
