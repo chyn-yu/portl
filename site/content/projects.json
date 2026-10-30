@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T18:22:55.202Z",
+  "updatedAt": "2026-10-30T18:54:21.077Z",
   "projects": [
     {
       "id": "aiid",
@@ -9,8 +9,8 @@
       "description": "参与走起GO移动端产品v5.1.3-v5.1.5链路改版。\n主要参与产品视觉升级优化，前期对接业务需求，进行用户调研，页面逻辑规划和视觉风格定位，后期参与重构页面布局，优化用户操作流程，制定并输出视觉方案及10+页面绘制。",
       "catalogTitle": "走起GO\nAPP改版升级",
       "catalogDescription": "链路，社区，迭代升级，Version Iteration",
-      "cover": "/assets/uploads/aiid-cover-5bbe5e04-8a04-41b5-8351-a698b5826d38.webp",
-      "icon": "/assets/uploads/aiid-icon-3224ddc9-c3f7-4f2c-a91b-d36797a5ec4c.webp",
+      "cover": "/assets/uploads/aiid-cover-fd93fb16-3408-466d-916a-b9365d2d50c1.webp",
+      "icon": "/assets/uploads/aiid-icon-4635d417-5da9-44d8-a85f-b2a56123d37e.webp",
       "video": "",
       "href": "https://chyn-yu.github.io/portl/projects/zouqi-go/"
     },
@@ -21,8 +21,8 @@
       "description": "参与番茄小说APP“番茄种花季”运营活动主视觉设计。\n主要负责专题页面视觉方案执行，前期使用MJ、Chatgpt等AI工具产出页面视觉元素，后期使用ComfyUI等AIGC工具，进行FL\nUX模型训练、整理、测试等，参与团队内素材生成及产出。",
       "catalogTitle": "番茄小说\nAPP运营活动",
       "catalogDescription": "运营，种花，引流，Tomato，番茄",
-      "cover": "/assets/uploads/passkeys-cover-e4dd73d0-8236-4c65-9c32-7f2e56600283.webp",
-      "icon": "/assets/images/work/passkeys/passkeys-icon.svg",
+      "cover": "/assets/uploads/passkeys-cover-2e1e54d8-32a5-40d1-b7f6-cc9ed588d3a9.webp",
+      "icon": "/assets/uploads/passkeys-icon-460672ba-8e0f-4d32-816e-503d3a09a959.webp",
       "video": "",
       "href": "https://chyn-yu.github.io/portl/projects/tomato/"
     },
