@@ -21,7 +21,7 @@ main > footer > div[style*="background"][style*="position"] { display: none !imp
 #recognitions > div[style*="position: fixed"] { display: none !important; }
 @media(max-width:639px) { #recognitions .recognition-preview { margin-top: 24px; } }
 /* Fade complete rows without animating each glyph. */
-#recognitions .recognition-row { opacity: 1; transition: opacity 180ms ease; }
+#recognitions .recognition-row { opacity: 1; transition: opacity 180ms ease; cursor: pointer; }
 #recognitions .recognition-row span { transition: none !important; }
 #recognitions div:has(> .recognition-row:hover) > .recognition-row:not(:hover) { opacity: .28; }
 @media(prefers-reduced-motion:reduce) { #recognitions .recognition-row { transition:none; } }
