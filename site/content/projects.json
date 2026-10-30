@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-30T16:25:09.061Z",
+  "updatedAt": "2026-10-30T18:22:55.202Z",
   "projects": [
     {
       "id": "aiid",
@@ -12,7 +12,7 @@
       "cover": "/assets/uploads/aiid-cover-5bbe5e04-8a04-41b5-8351-a698b5826d38.webp",
       "icon": "/assets/uploads/aiid-icon-3224ddc9-c3f7-4f2c-a91b-d36797a5ec4c.webp",
       "video": "",
-      "href": "https://www.hellohello.is/case-studies/stateofai"
+      "href": "https://chyn-yu.github.io/portl/projects/zouqi-go/"
     },
     {
       "id": "passkeys",

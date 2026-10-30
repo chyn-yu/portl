@@ -7,7 +7,7 @@ import {renderPages} from './pages.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const source=path.join(root,'site'),output=path.join(root,'docs');
 const content=await loadContent(source);
-const pdfPages=Object.fromEntries(await Promise.all(['yadea','tomato'].map(async name=>[name,JSON.parse(await fs.readFile(path.join(source,'assets/documents',name,'pages.json'),'utf8'))])));
+const pdfPages=Object.fromEntries(await Promise.all(['yadea','tomato','zouqi-go'].map(async name=>[name,JSON.parse(await fs.readFile(path.join(source,'assets/documents',name,'pages.json'),'utf8'))])));
 const defaults=JSON.parse(await fs.readFile(path.join(source,'content/defaults.json'),'utf8'));
 const base=(process.env.BASE_PATH||'/portl').replace(/\/$/,'');
 const rootFiles=(await fs.readdir(source)).filter(f=>/\.(?:css|js|json|ico|png)$/.test(f));
@@ -21,9 +21,9 @@ const revision=fingerprint.digest('hex').slice(0,12);
 function transform(text,rel){
   text=renderContent(text,rel,content,defaults);
   text=renderPages(text,rel,content);
-  const detailPage=/^projects\/(lookie|yadea|tomato)\/index\.html$/.exec(rel)?.[1];
+  const detailPage=/^projects\/(lookie|yadea|tomato|zouqi-go)\/index\.html$/.exec(rel)?.[1];
   if(detailPage){
-    const project=content.projects.find(p=>p.id===({lookie:'alchemy',yadea:'grateful',tomato:'passkeys'}[detailPage]));
+    const project=content.projects.find(p=>p.id===({lookie:'alchemy',yadea:'grateful',tomato:'passkeys','zouqi-go':'aiid'}[detailPage]));
     const escape=value=>value.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#x27;');
     const fields={__PROJECT_TITLE__:escape([project.title1,project.title2].filter(Boolean).join(' ')),__PROJECT_HEADING__:[project.title1,project.title2].filter(Boolean).map(line=>'<span>'+escape(line)+'</span>').join(''),__PROJECT_COVER__:escape(project.cover),__PROJECT_DESCRIPTION__:escape(project.description)};
     text=text.replace(/__PROJECT_(?:TITLE|HEADING|COVER|DESCRIPTION)__/g,key=>fields[key]);

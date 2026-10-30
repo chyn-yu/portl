@@ -1,4 +1,4 @@
-import {DEFAULT_PAGES} from './page-defaults.mjs?v=05f381b6f5f4';
+import {DEFAULT_PAGES} from './page-defaults.mjs?v=8d1609fc0d60';
 export const IDS = ['aiid','passkeys','grateful','alchemy'];
 export function validateContent(value) {
   if (!value || value.version !== 1 || !Array.isArray(value.projects) || value.projects.length !== 4) throw Error('作品数据格式不正确，需要保留四个作品。');

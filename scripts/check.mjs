@@ -22,4 +22,7 @@ for(const match of pdfDetail.matchAll(/(?:src|href)="(\/portl\/assets\/[^"?#]+)"
 const tomatoDetail=fs.readFileSync(path.join(docs,'projects/tomato/index.html'),'utf8');
 if(/__(?:PROJECT_[A-Z]+|PDF_PAGES)__/.test(tomatoDetail)||(tomatoDetail.match(/class="pdf-page"/g)||[]).length!==2)failures.push('Tomato PDF preview is incomplete');
 for(const match of tomatoDetail.matchAll(/(?:src|href)="(\/portl\/assets\/[^"?#]+)"/g))if(!fs.existsSync(path.join(docs,match[1].slice('/portl/'.length))))failures.push('Missing Tomato PDF resource: '+match[1]);
+const uxDetail=fs.readFileSync(path.join(docs,'projects/zouqi-go/index.html'),'utf8');
+if(/__(?:PROJECT_[A-Z]+|PDF_PAGES)__/.test(uxDetail)||(uxDetail.match(/class="pdf-page"/g)||[]).length!==20)failures.push('Zouqi GO PDF preview is incomplete');
+for(const match of uxDetail.matchAll(/(?:src|href)="(\/portl\/assets\/[^"?#]+)"/g))if(!fs.existsSync(path.join(docs,match[1].slice('/portl/'.length))))failures.push('Missing UX PDF resource: '+match[1]);
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1}else console.log('Checks passed: JavaScript syntax, static resource paths, personal title and contact handler.');
