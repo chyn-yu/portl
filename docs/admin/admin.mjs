@@ -1,5 +1,5 @@
-import {validateContent} from '../content-schema.mjs?v=bc249d65a468';
-import {createPagesEditor,writePath} from './pages-editor.mjs?v=bc249d65a468';
+import {validateContent} from '../content-schema.mjs?v=bb27aaefed74';
+import {createPagesEditor,writePath} from './pages-editor.mjs?v=bb27aaefed74';
 const REPO='chyn-yu/portl',BRANCH='main',FILE='site/content/projects.json';
 const root=new URL('../',location.href);
 const $=s=>document.querySelector(s);

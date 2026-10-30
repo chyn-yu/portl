@@ -98,18 +98,19 @@ main > .pin-spacer:has(#about),
 }
 @media (min-width: 640px) {
   #about > div:has(> img[src*="lu-kehao-portrait.jpg"]) {
-    width: min(493px, 30vw) !important; height: min(620px, 37.73vw) !important;
-    margin-top: max(-310px, -18.865vw) !important;
+    width: 30.3vw !important; height: 38.1vw !important;
+    margin-top: -19.05vw !important;
+    left: 3.85vw !important;
   }
   #about > div:has(> img[src*="lu-kehao-event.jpg"]) {
-    width: min(373px, 22.7vw) !important; height: min(257px, 15.65vw) !important;
-    margin-top: max(-128.5px, -7.825vw) !important;
-    left: calc(clamp(16px, 1.67vw, 24px) + min(88px, 5.35vw) + clamp(16px, 4vw, 64px)) !important;
+    width: 22.9vw !important; height: 15.85vw !important;
+    margin-top: -7.925vw !important;
+    left: 9.26vw !important;
   }
   #about > div:has(> img[src*="lu-kehao-contact.png"]) {
-    width: min(215px, 13.08vw) !important; height: min(305px, 18.56vw) !important;
-    margin-top: max(-152.5px, -9.28vw) !important;
-    left: calc(clamp(16px, 1.67vw, 24px) + min(49.5px, 3vw) + clamp(16px, 4vw, 64px)) !important;
+    width: 12.52vw !important; height: 17.85vw !important;
+    margin-top: -8.925vw !important;
+    left: 7.57vw !important;
   }
 }
 @media (max-width: 639px) {
