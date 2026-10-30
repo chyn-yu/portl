@@ -40,7 +40,7 @@ export function renderPages(text,rel,content){
    let i=0;part=part.replace(/<div style="display:grid;grid-template-columns:1fr auto auto;[^\"]*">(?:<span\b[^>]*>[\s\S]*?<\/span>){3}<\/div>/g,()=>i++===0?markup:'');
    let summary=0;part=part.replace(/(<span style="[^"]*color:#777">)([^<]*)(<\/span>)/g,(all,x,v,z)=>D.recognitions.summary.split('\n').map(esc).includes(v)?x+esc(a.summary.split('\n')[summary++]||'')+z:all);
    const old=esc(D.recognitions.memberText).replace('the global ','the global<br>').replace('digital agencies.','digital<br>agencies.');part=part.replace(old,esc(a.memberText)).replace(old.replaceAll('&#x27;',"'"),esc(a.memberText));
-   return previewMarkup(part);
+   return previewMarkup(part,a.entries);
   });
   const data=JSON.stringify({about,defaults:D.about}).replaceAll('<','\\u003c');
   text=text.replace('</head>','<script>window.__MANAGED_ABOUT__='+data+';</script></head>');
